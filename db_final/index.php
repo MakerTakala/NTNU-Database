@@ -56,32 +56,31 @@
 		<!-- hint: 用這段php code 讀取資料庫的資料-->
 
 		<?php
-		/*
-				include "conn.php";
-				
-				// set up char set
-				if (!$conn->set_charset("utf8")) {
-					printf("Error loading character set utf8: %s\n", $conn->error);
-					exit();
-				}
-				
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
-				} 
-				
-				// ******** update your personal settings ******** 
-				$sql = "SELECT ...";	// set up your sql query
-				$result = $conn->query($sql);	// Send SQL Query
+			include "conn.php";
+			
+			// set up char set
+			if (!$conn->set_charset("utf8")) {
+				printf("Error loading character set utf8: %s\n", $conn->error);
+				exit();
+			}
+			
+			// Check connection
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			} 
+			
+			// ******** update your personal settings ******** 
+			$sql = "SELECT ...";	// set up your sql query
+			$result = $conn->query($sql);	// Send SQL Query
 
-				if ($result->num_rows > 0) {	
-					while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-						// Process the Result here , need to modify.
-					}
-				} else {
-					echo "0 results";
+			if ($result->num_rows > 0) {	
+				while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
+					// Process the Result here , need to modify.
 				}
-		*/
+			} else {
+				echo "0 results";
+			}
+		
 		?>
 		
 	</table>
