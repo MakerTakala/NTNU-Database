@@ -55,7 +55,7 @@
 
 		<!-- hint: 用這段php code 讀取資料庫的資料-->
 
-		<?php
+		<!-- <?php
 			include "conn.php";
 			
 			// set up char set
@@ -70,18 +70,27 @@
 			} 
 			
 			// ******** update your personal settings ******** 
-			$sql = "SELECT ...";	// set up your sql query
+			$sql = "SELECT * FROM student";	// set up your sql query
 			$result = $conn->query($sql);	// Send SQL Query
 
 			if ($result->num_rows > 0) {	
 				while ( $row = mysqli_fetch_array ( $result, MYSQLI_ASSOC ) ) {
-					// Process the Result here , need to modify.
+					printf(
+						"<tr>
+							<td>%d</td>
+							<td>%s</td>
+							<td>%d</td>
+							<td><a href=\"update.php?\">修改</td>
+							<td><a href=\"delete.php?\">刪除</td>
+						</tr>"
+						, $row["id"], $row["StuName"], $row["StuNum"]
+					);
 				}
 			} else {
 				echo "0 results";
 			}
 		
-		?>
+		?> -->
 		
 	</table>
 	<p align="center"><a href="create.html">新增資料</a><p>
