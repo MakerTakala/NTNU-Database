@@ -13,11 +13,11 @@
 
 
 -- 傾印 db_class 的資料庫結構
-CREATE DATABASE IF NOT EXISTS `db_class` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-USE `db_class`;
+CREATE DATABASE IF NOT EXISTS `team3` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+USE `team3`;
 
 -- 傾印  表格 db_class.student 結構
-CREATE TABLE IF NOT EXISTS `student` (
+CREATE TABLE IF NOT EXISTS `student_tatala` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `StuName` char(50) COLLATE utf8_bin NOT NULL,
   `StuNum` int(11) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 
 -- 正在傾印表格  db_class.student 的資料：~2 rows (大約)
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
-INSERT INTO `student` (`id`, `StuName`, `StuNum`, `passwd`, `gender`) VALUES
+INSERT INTO `student_tatala` (`id`, `StuName`, `StuNum`, `passwd`, `gender`) VALUES
 	(2, 'Bryant', 24, '123345fff', 1),
 	(3, 'Robert Baratheon', 55, '123456', 1),
 	(4, 'Jaime Lannister', 56, '123456', 1),

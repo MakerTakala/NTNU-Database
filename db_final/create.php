@@ -16,7 +16,6 @@ if (isset($_POST['StuName']) && isset($_POST['StuNum']) && isset($_POST['passwd'
 	$StuNum = $_POST['StuNum'];
 	$passwd = $_POST['passwd'];
 	$gender = $_POST['gender'];
-
 	
 	$insert_sql = "INSERT INTO student 
 				(StuName, StuNum, passwd, gender) 

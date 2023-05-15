@@ -16,6 +16,7 @@
 <body>
 	
 	<h1 align="center">學生資料庫管理系統</h1>
+	<p align="center"><a href="create.html">新增資料</a><p>
 	<table style="width:50%" align="center">
 		<tr><th>id</th><th>Name</th><th>stdid</th><th colspan="2">Action</th></tr>
 		<!-- TODO 
@@ -55,7 +56,7 @@
 
 		<!-- hint: 用這段php code 讀取資料庫的資料-->
 
-		<!-- <?php
+		<?php
 			include "conn.php";
 			
 			// set up char set
@@ -90,10 +91,10 @@
 				echo "0 results";
 			}
 		
-		?> -->
+		?>
 		
 	</table>
-	<p align="center"><a href="create.html">新增資料</a><p>
+	
 </body>
 	
 </html>
