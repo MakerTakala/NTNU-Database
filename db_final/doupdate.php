@@ -11,25 +11,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-if (isset($_POST['StuName']) && isset($_POST['StuNum']) && isset($_POST['passwd']) && isset($_POST['gender'])) {
+if (isset($_POST['StuName']) && isset($_POST['StuNum']) && isset($_POST['passwd']) && isset($_POST['gender']) && isset($_POST['id'])) {
 	$StuName = $_POST['StuName'];
 	$StuNum = $_POST['StuNum'];
 	$passwd = $_POST['passwd'];
 	$gender = $_POST['gender'];
 	$id = $_POST['id'];
 
-	$update_sql = "UPDATE student".
-				  "SET StuName='$StuName', StuNum=$StuNum, passwd='$passwd', gender=$gedner,".
-				  "WHERE id=$id";
+	$update_sql = "UPDATE student_takala SET StuName='$StuName', StuNum=$StuNum, passwd='$passwd', gender=$gender WHERE id=$id";
 	
 	if ($conn->query($update_sql) === TRUE) {
 		echo "修改成功!!<br> <a href='index.php'>返回主頁</a>";
 	} else {
-		echo "<h2 align='center'><font color='antiquewith'>修改失敗!!</font></h2>";
+		echo "<h2 align='center'><font color='antiquewith'>修改失敗!!</font></h2> <a href='index.php'>返回主頁</a>";
 	}
 
 }else{
-	echo "資料不完全";
+	echo "資料不完全 <a href='index.php'>返回主頁</a>";
 }
 				
 ?>

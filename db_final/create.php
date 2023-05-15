@@ -17,10 +17,11 @@ if (isset($_POST['StuName']) && isset($_POST['StuNum']) && isset($_POST['passwd'
 	$passwd = $_POST['passwd'];
 	$gender = $_POST['gender'];
 	
-	$insert_sql = "INSERT INTO student 
+	
+	$insert_sql = "INSERT INTO student_takala
 				(StuName, StuNum, passwd, gender) 
 				VALUES 
-				('$StuName', '$StuNum', '$passwd', '$gender')";
+				('$StuName', $StuNum, '$passwd', $gender)";
 	
 	if ($conn->query($insert_sql) === TRUE) {
 		echo "新增成功!!<br> <a href='index.php'>返回主頁</a>";
@@ -29,7 +30,7 @@ if (isset($_POST['StuName']) && isset($_POST['StuNum']) && isset($_POST['passwd'
 	}
 
 }else{
-	echo "資料不完全";
+	echo "資料不完全 <a href='index.php'>返回主頁</a>";
 }
 				
 ?>

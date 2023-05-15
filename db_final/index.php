@@ -19,40 +19,6 @@
 	<p align="center"><a href="create.html">新增資料</a><p>
 	<table style="width:50%" align="center">
 		<tr><th>id</th><th>Name</th><th>stdid</th><th colspan="2">Action</th></tr>
-		<!-- TODO 
-			從資料庫中撈出student表格的資料，用html呈現。
-			
-			以下html為範例。
-		-->
-		<tr>
-			<td>7</td>
-			<td>Daenerys Targaryen</td>
-			<td>59</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Daenerys Targaryen</td>
-			<td>59</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>Jon Snow</td>
-			<td>60</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Arya Stark</td>
-			<td>61</td>
-			<td><a href="update.php?">修改</td>
-			<td><a href="delete.php?">刪除</td>
-		</tr>
-
 
 		<!-- hint: 用這段php code 讀取資料庫的資料-->
 
@@ -68,10 +34,11 @@
 			// Check connection
 			if ($conn->connect_error) {
 				die("Connection failed: " . $conn->connect_error);
-			} 
+			} 			
 			
 			// ******** update your personal settings ******** 
-			$sql = "SELECT * FROM student";	// set up your sql query
+			$sql = "SELECT * FROM student_takala";	// set up your sql query
+			
 			$result = $conn->query($sql);	// Send SQL Query
 
 			if ($result->num_rows > 0) {	
@@ -81,10 +48,10 @@
 							<td>%d</td>
 							<td>%s</td>
 							<td>%d</td>
-							<td><a href=\"update.php?\">修改</td>
-							<td><a href=\"delete.php?\">刪除</td>
+							<td><a href=\"update.php?id=%d&StuName=%s&StuNum=%d&passwd=%s&gender=%d\">修改</td>
+							<td><a href=\"delete.php?id=%d\">刪除</td>
 						</tr>"
-						, $row["id"], $row["StuName"], $row["StuNum"]
+						, $row["id"], $row["StuName"], $row["StuNum"], $row["id"], $row["StuName"], $row["StuNum"], $row["passwd"], $row["gender"], $row["id"]
 					);
 				}
 			} else {

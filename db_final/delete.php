@@ -14,17 +14,16 @@ if ($conn->connect_error) {
 $id = $_GET['id'];
 
 if (isset($id)) {
-    $delete_sql = "DELETE FROM student".
-                  "WHERE id=$id";
+    $delete_sql = "DELETE FROM student_takala WHERE id=$id";
 
 	if ($conn->query($delete_sql) === TRUE) {
-        echo "刪除成功!<a href='index.php'>返回主頁</a>";
+        echo "刪除成功!<br><a href='index.php'>返回主頁</a>";
     }else{
-        echo "刪除失敗!";
+        echo "刪除失敗! <a href='index.php'>返回主頁</a>";
 	}
 
 }else{
-	echo "資料不完全";
+	echo "資料不完全 <a href='index.php'>返回主頁</a>";
 }
 				
 ?>

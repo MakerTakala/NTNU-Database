@@ -18,21 +18,48 @@
 			用該 id 去資料庫做搜尋，再把搜尋到的資料填入到html表單中。
 		
 		-->
-		<tr>
-		  <th>姓名</th>
-		  <td bgcolor="#FFFFFF"><input type="text" name="StuName" value="" /></td>
-		</tr>
-		 <tr>
-		  <th>學號 <input type="hidden" name="id" value="" /></th>
-		  <td bgcolor="#FFFFFF"><input type="text" name="StuNum" value="" /></td>
-		</tr>
-		<tr>
-		  <th>密碼</th>
-		  <td bgcolor="#FFFFFF"><input type="text" name="passwd" value="" /></td>
-		</tr>
-		<tr>
-		  <th>性別</th>
-			<td bgcolor='#FFFFFF'><input  type='radio' name='gender' value='1' checked>男 </input> <input type='radio' name='gender' value='0'>女 </input>
+		<?php
+			$id = $_GET['id'];
+			echo "<tr>
+				<th>ID</th>
+				<td bgcolor=\"#FFFFFF\"><input type=\"text\" name=\"id\" value=\"$id\" readonly=\"readonly\" style=\"border-style:none\" /></td>
+			</tr>";	
+
+			$StuName = $_GET['StuName'];
+			echo "<tr>
+				<th>姓名</th>
+				<td bgcolor=\"#FFFFFF\"><input type=\"text\" name=\"StuName\" value=\"$StuName\" /></td>
+			</tr>";
+			
+			$StuNum = $_GET['StuNum'];
+			echo "<tr>
+				<th>學號</th>
+				<td bgcolor=\"#FFFFFF\"><input type=\"text\" name=\"StuNum\" value=\"$StuNum\" /></td>
+			</tr>";
+			
+			$passwd = $_GET['passwd'];
+			echo "<tr>
+				<th>密碼</th>
+				<td bgcolor=\"#FFFFFF\"><input type=\"text\" name=\"passwd\" value=\"$passwd\" /></td>
+			</tr>";
+		
+			$gender = $_GET['gender'];
+			if($gender == 0) {
+				echo"
+					<tr>
+						<th>性別</th>
+						<td bgcolor='#FFFFFF'><input  type='radio' name='gender' value='0' checked>男 </input> <input type='radio' name='gender' value='1'>女 </input>
+					<tr>";
+			}
+			else {
+				echo"
+					<tr>
+						<th>性別</th>
+						<td bgcolor='#FFFFFF'><input  type='radio' name='gender' value='0'>男 </input> <input type='radio' name='gender' value='1' checked>女 </input>
+					<tr>";
+			}
+			
+		?>
 		<tr>
 		  <th colspan="2"><input type="submit" value="更新"/></th>
 		</tr>
