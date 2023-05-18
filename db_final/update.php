@@ -44,7 +44,7 @@
 			</tr>";
 		
 			$gender = $_GET['gender'];
-			if($gender == 0) {
+			if($gender == 1) {
 				echo"
 					<tr>
 						<th>性別</th>
